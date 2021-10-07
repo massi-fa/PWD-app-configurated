@@ -1,5 +1,7 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components/macro';
+import FirstLook from './components/FirstLook';
+import Info from './components/Info';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -16,14 +18,11 @@ const Container = styled.div`
   height: 100%;
 `;
 
-const Text = styled.h1`
-
-`;
-
 const App = () => (
   <Container>
     <GlobalStyle />
-    <Text>Ciao</Text>
+    <Info />
+    <FirstLook />
   </Container>
 );
 
