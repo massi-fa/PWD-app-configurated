@@ -8,7 +8,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   padding: 10px;
-  background-color: #e12d2b;
+  background-color: rgba(250, 224, 224, 0.56);
   position: sticky;
 `;
 
@@ -17,6 +17,7 @@ const Text = styled.h1`
   text-align: center;
   margin: auto;
   margin-left: 3px;
+  color: #991d18;
 `;
 
 const Logo = styled.img`

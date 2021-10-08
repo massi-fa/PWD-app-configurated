@@ -1,11 +1,14 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components/macro';
-import FirstLook from './components/FirstLook';
+import Header from './components/Header';
+import Home from './components/Home';
 import Info from './components/Info';
+
+import sfondo from './res/AnimatedShape.svg';
 
 const GlobalStyle = createGlobalStyle`
   * {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     transition: all 0.25s;
   }
   body {
@@ -15,14 +18,18 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Container = styled.div`
-  height: 100%;
+  height: 100vh;
+  background-image: url(${sfondo});
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const App = () => (
   <Container>
     <GlobalStyle />
     <Info />
-    <FirstLook />
+    <Header />
+    <Home />
   </Container>
 );
 
