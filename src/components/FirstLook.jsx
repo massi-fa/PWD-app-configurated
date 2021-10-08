@@ -1,25 +1,40 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import sfondo from '../res/maggiolinosfondo1.jpg';
+import sfondo from '../res/maggiolinosfondo3.jpg';
+import logo from '../res/logo.png';
+import carAnimated from '../res/animatedAuto.svg';
 
 const Container = styled.div`
-  background-image: url(${sfondo}) ;
+  //background-image: url(${sfondo}) ;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 20rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 `;
 
-const Text = styled.h1`
-  font-size: 1rem;
-  text-align: center;
+const ContainerLogo = styled.div`
+  width: 45%;
+  padding: 10px;
+  float: left;
+`;
+
+const Logo = styled.img`
   margin: auto;
+ max-width: 10rem;
+  float: left;
 `;
 
 const FirstLook = () => (
   <Container>
-    <Text>Pratiche auto Moi</Text>
+    <ContainerLogo>
+      <Logo src={logo} />
+    </ContainerLogo>
+    <ContainerLogo>
+      <Logo src={carAnimated} />
+    </ContainerLogo>
   </Container>
 );
 
