@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import logo from '../res/logo.png';
 
 const breakpoint = 900;
@@ -32,7 +32,6 @@ const ElementList = styled.ul`
     flex-direction: column;
     background-color: #fff;
     width: 100%;
-    border-radius: 10px;
     text-align: center;
     transition: 0.3s;
     box-shadow:
@@ -74,6 +73,15 @@ const Line = styled.span`
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-color: #101010;
+  &:nth-child(1) {
+    transform: ${(props) => (props.menu ? 'translateY(8px) rotate(45deg)' : 'none')};
+  }
+  &:nth-child(2) {
+    opacity: ${(props) => (props.menu ? '0' : 'none')};
+  }
+  &:nth-child(3) {
+    transform: ${(props) => (props.menu ? 'translateY(-8px) rotate(-45deg)' : 'none')};
+  }
 `;
 
 const Header = () => {
@@ -107,9 +115,9 @@ const Header = () => {
         </Element>
       </ElementList>
       <Hamburger width={width} onClick={handleClick}>
-        <Line />
-        <Line />
-        <Line />
+        <Line id="1" menu={menu} />
+        <Line id="2" menu={menu} />
+        <Line id="3" menu={menu} />
       </Hamburger>
     </Container>
   );
