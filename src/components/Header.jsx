@@ -108,10 +108,10 @@ const Header = () => {
           <ElementContent>Chi siamo</ElementContent>
         </Element>
         <Element>
-          <ElementContent>Dove trovarci</ElementContent>
+          <ElementContent>Servizi</ElementContent>
         </Element>
         <Element>
-          <ElementContent>Servizi</ElementContent>
+          <ElementContent>Contatti</ElementContent>
         </Element>
       </ElementList>
       <Hamburger width={width} onClick={handleClick}>
