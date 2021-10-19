@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components/macro';
 import Header from './components/Header';
 import Home from './components/Home';
+import Whoam from './components/Whoam';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -26,6 +27,7 @@ const App = () => (
     <GlobalStyle />
     <Header />
     <Home />
+    <Whoam />
   </Container>
 );
 

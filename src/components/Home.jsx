@@ -50,7 +50,7 @@ const TextPromo = styled.h2`
   @media only screen and (max-width: 680px) {
     font-size: 30px;
   }
-  @media only screen and (max-width: 410px) {
+  @media only screen and (max-width: 430px) {
     font-size: 20px;
   }
 `;
@@ -59,29 +59,25 @@ const Button = styled.button`
   outline: none;
   border: none;
   margin: auto;
+  margin-bottom: 30px;
   border-radius: 20px;
   background-color: #2686EE;
   display: flex;
   flex-direction: row;
-  width: 17rem;
+  justify-content: center;
   padding: 15px;
-  @media only screen and (max-width: 680px) {
-    width: 15rem;
-  }
-  @media only screen and (max-width: 410px) {
-    width: 12rem;
-  }
 `;
 
 const ButtonLogo = styled.img`
   height: 40px;
-  margin:auto 5px auto 5px;
+  margin: auto;
   @media only screen and (max-width: 680px) {
     height: 30px;
   }
-  @media only screen and (max-width: 410px) {
+  @media only screen and (max-width: 430px) {
     height: 20px;
   }
+  margin-right: 5px;
 `;
 
 const ButtonText = styled.h1`
@@ -90,10 +86,11 @@ const ButtonText = styled.h1`
   @media only screen and (max-width: 680px) {
     font-size: 30px;
   }
-  @media only screen and (max-width: 410px) {
+  @media only screen and (max-width: 430px) {
     font-size: 20px;
   }
-  margin:auto 5px auto 5px;
+  margin: auto;
+  margin-left: 5px;
 `;
 
 const Home = () => (
@@ -103,7 +100,7 @@ const Home = () => (
     <TextPromo>le tue pratiche</TextPromo>
     <Button>
       <ButtonLogo src={phone} />
-      <ButtonText>Chiamaci</ButtonText>
+      <ButtonText>Contattaci</ButtonText>
     </Button>
   </Container>
 );
