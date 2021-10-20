@@ -13,13 +13,16 @@ const ContainerDescription = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 40%;
+  @media only screen and (max-width: 900px) {
+    width: 75%;
+  }
 `;
 
 const ContainerTitle = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 30px;
+  margin-bottom: 40px;
 `;
 
 const ContainerGeneral = styled.div`
@@ -56,10 +59,11 @@ const Title = styled.h1`
 const Content = styled.h2`
   text-align: center;
   width: 70%;
-  margin:20px auto;
+  margin: 20px auto;
   font-family: 'Rubik', sans-serif;
   @media only screen and (max-width: 900px) {
     width: 100%;
+    font-size: 1.5rem;
   }
 `;
 
