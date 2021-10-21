@@ -1,9 +1,15 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components/macro';
 
+import Header from './components/Header';
+import Home from './components/Home';
+
+import homeText from './utils/home';
+import homeImg from './res/homeImg.svg';
+
 const GlobalStyle = createGlobalStyle`
   * {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     transition: all 0.25s;
   }
   body {
@@ -16,14 +22,11 @@ const Container = styled.div`
   height: 100%;
 `;
 
-const Text = styled.h1`
-
-`;
-
 const App = () => (
   <Container>
     <GlobalStyle />
-    <Text>Ciao</Text>
+    <Header />
+    <Home title={homeText.title} description={homeText.description} image={homeImg} />
   </Container>
 );
 
