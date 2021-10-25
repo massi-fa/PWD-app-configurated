@@ -6,6 +6,7 @@ import Home from './components/Home';
 
 import homeText from './utils/home';
 import homeImg from './res/homeImg.svg';
+import TimeLine from './components/TimeLine';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -27,6 +28,7 @@ const App = () => (
     <GlobalStyle />
     <Header />
     <Home title={homeText.title} description={homeText.description} image={homeImg} />
+    <TimeLine />
   </Container>
 );
 

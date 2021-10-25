@@ -5,9 +5,16 @@ import logo from '../res/logo.svg';
 
 const breakpoint = 900;
 
-const Container = styled.header`
+const Wrapper = styled.div`
   width: 100%;
   background-color: #1d1d1d;
+`;
+
+const Container = styled.header`
+  @media only screen and (min-width: 1400px) {
+    width: 1400px;
+    margin: auto;
+  };
   @media only screen and (min-width: 900px) {
     display: flex;
     justify-content: space-between;
@@ -110,31 +117,32 @@ const Header = () => {
 
   if (width > breakpoint && menu) {
     setMenu(!menu);
-    console.log('ciccio');
   }
 
   return (
-    <Container>
-      <ContainerLogoHamb>
-        <Logo src={logo} />
-        <Hamburger width={width} onClick={handleClick}>
-          <Line id="1" menu={menu} />
-          <Line id="2" menu={menu} />
-          <Line id="3" menu={menu} />
-        </Hamburger>
-      </ContainerLogoHamb>
-      <ElementList active={menu}>
-        <Element>
-          <ElementContent>About me</ElementContent>
-        </Element>
-        <Element>
-          <ElementContent>Education</ElementContent>
-        </Element>
-        <Element>
-          <ElementContent>Projects</ElementContent>
-        </Element>
-      </ElementList>
-    </Container>
+    <Wrapper>
+      <Container>
+        <ContainerLogoHamb>
+          <Logo src={logo} />
+          <Hamburger width={width} onClick={handleClick}>
+            <Line id="1" menu={menu} />
+            <Line id="2" menu={menu} />
+            <Line id="3" menu={menu} />
+          </Hamburger>
+        </ContainerLogoHamb>
+        <ElementList active={menu}>
+          <Element>
+            <ElementContent>About me</ElementContent>
+          </Element>
+          <Element>
+            <ElementContent>Education</ElementContent>
+          </Element>
+          <Element>
+            <ElementContent>Projects</ElementContent>
+          </Element>
+        </ElementList>
+      </Container>
+    </Wrapper>
   );
 };
 
