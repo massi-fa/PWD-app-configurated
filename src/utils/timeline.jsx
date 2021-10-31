@@ -5,6 +5,7 @@ const timeLineElements = [
     description: '',
     date: 'September 2012 - July 2018',
     location: 'Liceo Antonio Pacinotti Cagliari',
+    type: 'study',
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ const timeLineElements = [
     description: 'Bachelor\'s Degree in Computer Science',
     date: 'September 2018 - July 2021',
     location: 'Università degli Studi Cagliari',
+    type: 'study',
   },
   {
     id: 2,
@@ -19,6 +21,7 @@ const timeLineElements = [
     description: 'Master\'s Degree in Computer Science',
     date: 'September 2021 - current',
     location: 'Università degli Studi Cagliari',
+    type: 'study',
   },
 ];
 
