@@ -16,7 +16,7 @@ const TimelineMUI = () => (
     {
       timeLineElements.map((element) => (
         <TimelineItem>
-          <TimelineOppositeContent>
+          <TimelineOppositeContent color="white">
             {element.date}
           </TimelineOppositeContent>
           <TimelineSeparator>
@@ -27,10 +27,10 @@ const TimelineMUI = () => (
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent sx={{ py: '12px', px: 2 }}>
-            <Typography variant="h6" component="span">
+            <Typography variant="h6" component="span" color="white">
               {element.title}
             </Typography>
-            <Typography>{element.description}</Typography>
+            <Typography color="white">{element.description}</Typography>
           </TimelineContent>
         </TimelineItem>
       ))

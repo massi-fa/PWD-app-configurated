@@ -103,7 +103,9 @@ const Home = ({
         <Description>
           I&apos;m
           <Change> Massimiliano Fadda</Change>
-          . I&apos;m a programmer and a computer science student. The only goal is to keep learning
+          .
+          <br />
+          I&apos;m a programmer and a computer science student. The only goal is to keep learning
         </Description>
         <ContainerIcon>
           <Link href="https://github.com/massi-fa">

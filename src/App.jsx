@@ -3,10 +3,10 @@ import styled, { createGlobalStyle } from 'styled-components/macro';
 
 import Header from './components/Header';
 import Home from './components/Home';
+import Education from './components/Education';
 
 import homeText from './utils/home';
 import homeImg from './res/homeImg.svg';
-import TimelineMUI from './components/TimelineMUI';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -16,11 +16,13 @@ const GlobalStyle = createGlobalStyle`
   body {
     overflow: hidden;
     height: 100%;
+    overflow: auto;
+    scrollbar-width: thin;
   } 
 `;
 
 const Container = styled.div`
-  height: 100%;
+
 `;
 
 const App = () => (
@@ -28,7 +30,7 @@ const App = () => (
     <GlobalStyle />
     <Header />
     <Home title={homeText.title} description={homeText.description} image={homeImg} />
-    <TimelineMUI />
+    <Education />
   </Container>
 );
 
