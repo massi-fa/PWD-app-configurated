@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components/macro';
-
+import { useLocation, useHistory } from 'react-router-dom';
 import logo from '../res/logo.svg';
 
 const breakpoint = 900;
@@ -11,8 +11,8 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.header`
-  @media only screen and (min-width: 1400px) {
-    width: 1400px;
+  @media only screen and (min-width: 1500px) {
+    width: 1500px;
     margin: auto;
   };
   @media only screen and (min-width: 900px) {
@@ -90,20 +90,40 @@ const ElementList = styled.div`
 
 const Element = styled.div`
   list-style: none;
-  padding: 10px;
+  padding: 5px 20px 5px 20px;
+  transition: 0;
+  &:nth-child(1) {
+    color: ${(props) => (props.current === '/Me' ? '#9f3645' : '#d7dbd8')};
+  }
+  &:nth-child(2) {
+    color: ${(props) => (props.current === '/Projects' ? '#9f3645' : '#d7dbd8')};
+  }
+  &:nth-child(3) {
+    color: ${(props) => (props.current === '/ContactMe' ? '#9f3645' : '#d7dbd8')};
+  }
 `;
 
 const ElementContent = styled.a`
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: 400;
-  color: #d7dbd8;
-  &:hover {
-    color: white;
-  }
 `;
 
 const Header = () => {
+  const location = useLocation();
+  const path = location.pathname;
+  const history = useHistory();
+
+  const handleClickMe = () => {
+    history.push('/Me');
+  };
+  const handleClickProjects = () => {
+    history.push('/Projects');
+  };
+  const handleClickContactMe = () => {
+    history.push('/ContactMe');
+  };
+
   const [width, setWidth] = useState(window.innerWidth);
   const [menu, setMenu] = useState(false);
 
@@ -131,14 +151,14 @@ const Header = () => {
           </Hamburger>
         </ContainerLogoHamb>
         <ElementList active={menu}>
-          <Element>
-            <ElementContent>About me</ElementContent>
+          <Element id="1" current={path} onClick={handleClickMe}>
+            <ElementContent>Me</ElementContent>
           </Element>
-          <Element>
-            <ElementContent>Education</ElementContent>
-          </Element>
-          <Element>
+          <Element id="2" current={path} onClick={handleClickProjects}>
             <ElementContent>Projects</ElementContent>
+          </Element>
+          <Element id="3" current={path} onClick={handleClickContactMe}>
+            <ElementContent>Contact Me</ElementContent>
           </Element>
         </ElementList>
       </Container>

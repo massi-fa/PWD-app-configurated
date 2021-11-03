@@ -15,9 +15,11 @@ const TimelineMUI = () => (
   <Timeline position="alternate">
     {
       timeLineElements.map((element) => (
-        <TimelineItem>
+        <TimelineItem key={element.id}>
           <TimelineOppositeContent color="white">
             {element.date}
+            <br />
+            {element.location}
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineConnector />

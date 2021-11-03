@@ -16,7 +16,7 @@ const timeLineElements = [
     type: 'study',
   },
   {
-    id: 2,
+    id: 3,
     title: 'Master\'s Degree',
     description: 'Master\'s Degree in Computer Science',
     date: 'September 2021 - current',

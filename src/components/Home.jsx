@@ -5,11 +5,6 @@ import PropTypes from 'prop-types';
 import git from '../res/github.svg';
 import linkedin from '../res/linkedin.svg';
 
-const Wrapper = styled.div`
-  width: 100%;
-  background-color: #28292d;;
-`;
-
 const Container = styled.div`
   display: flex;
   width: 100%;
@@ -31,7 +26,6 @@ const ContainerIntro = styled.div`
   @media only screen and (min-width: 900px) {
     width: 50%;
   };
-  
 `;
 
 const Title = styled.h1`
@@ -96,31 +90,29 @@ const Home = ({
   title,
   image,
 }) => (
-  <Wrapper>
-    <Container>
-      <ContainerIntro>
-        <Title>{title}</Title>
-        <Description>
-          I&apos;m
-          <Change> Massimiliano Fadda</Change>
-          .
-          <br />
-          I&apos;m a programmer and a computer science student. The only goal is to keep learning
-        </Description>
-        <ContainerIcon>
-          <Link href="https://github.com/massi-fa">
-            <SocialIcon src={git} />
-          </Link>
-          <Link href="https://www.linkedin.com/in/massimiliano-fadda-535bb7205/">
-            <SocialIcon src={linkedin} />
-          </Link>
-        </ContainerIcon>
-      </ContainerIntro>
-      <ContainerImg>
-        <Image src={image} />
-      </ContainerImg>
-    </Container>
-  </Wrapper>
+  <Container>
+    <ContainerIntro>
+      <Title>{title}</Title>
+      <Description>
+        I&apos;m
+        <Change> Massimiliano Fadda</Change>
+        .
+        <br />
+        I&apos;m a programmer and a computer science student. The only goal is to keep learning
+      </Description>
+      <ContainerIcon>
+        <Link href="https://github.com/massi-fa">
+          <SocialIcon src={git} />
+        </Link>
+        <Link href="https://www.linkedin.com/in/massimiliano-fadda-535bb7205/">
+          <SocialIcon src={linkedin} />
+        </Link>
+      </ContainerIcon>
+    </ContainerIntro>
+    <ContainerImg>
+      <Image src={image} />
+    </ContainerImg>
+  </Container>
 );
 
 Home.propTypes = {
