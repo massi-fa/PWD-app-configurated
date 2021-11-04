@@ -1,9 +1,15 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
+import projects from '../utils/projects';
 import image from '../res/projects.svg';
+import Card from './bits/Card';
 
 const Container = styled.div`
+
+`;
+
+const ContainerIntro = styled.div`
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -67,20 +73,32 @@ const Description = styled.h3`
   color: white;
 `;
 
+const ContainerProjects = styled.div`
+
+`;
+
 const Projecs = () => (
   <Container>
-
-    <ContainerImg>
-      <Image src={image} />
-    </ContainerImg>
-    <ContainerText>
-      <Title>Projects</Title>
-      <Description>
-        My projects makes use of vast variety of latest technology tools.
-        <br />
-        They are the realization of my desire to learn.
-      </Description>
-    </ContainerText>
+    <ContainerIntro>
+      <ContainerImg>
+        <Image src={image} />
+      </ContainerImg>
+      <ContainerText>
+        <Title>Projects</Title>
+        <Description>
+          My projects makes use of vast variety of latest technology tools.
+          <br />
+          They are the realization of my desire to learn.
+        </Description>
+      </ContainerText>
+    </ContainerIntro>
+    <ContainerProjects>
+      {
+        projects.map((element) => (
+          <Card name={element.name} image={element.languages} description={element.description} key={element.id} />
+        ))
+      }
+    </ContainerProjects>
   </Container>
 );
 
