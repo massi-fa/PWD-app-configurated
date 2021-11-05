@@ -1,4 +1,5 @@
 import js from '../res/js.svg';
+import c from '../res/c.svg';
 
 const projects = [
   {
@@ -8,6 +9,61 @@ const projects = [
     languages: [
       {
         image: js,
+      },
+      {
+        image: c,
+      },
+    ],
+  },
+  {
+    id: '2',
+    name: 'Menu APP',
+    description: 'Prototipo di un app menu sfruttanto la tecnologia MERN',
+    languages: [
+      {
+        image: js,
+      },
+      {
+        image: c,
+      },
+    ],
+  },
+  {
+    id: '3',
+    name: 'Stillosu APP',
+    description: 'Prototipo di un app per gestire il proprio armadio',
+    languages: [
+      {
+        image: js,
+      },
+      {
+        image: c,
+      },
+    ],
+  },
+  {
+    id: '4',
+    name: 'VGD Project',
+    description: 'Gioco Unity 3d con 3 livelli',
+    languages: [
+      {
+        image: js,
+      },
+      {
+        image: c,
+      },
+    ],
+  },
+  {
+    id: '5',
+    name: 'PacMan',
+    description: 'Gioco di pacman realizzato sfruttando la libreria Ncurses e la concorrenza dei thread su linux',
+    languages: [
+      {
+        image: js,
+      },
+      {
+        image: c,
       },
     ],
   },

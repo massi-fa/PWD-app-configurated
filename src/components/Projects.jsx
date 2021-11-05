@@ -74,7 +74,24 @@ const Description = styled.h3`
 `;
 
 const ContainerProjects = styled.div`
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
 
+const SubTitle = styled.h1`
+  margin: 20px auto 20px auto;
+  text-align: center;
+  color: white;
+  font-size: 2.5rem;
+`;
+
+const Line = styled.hr`
+    height: 0.5rem;
+    width: 8rem;
+    border-radius: 25px;
+    background-color: white;
 `;
 
 const Projecs = () => (
@@ -92,10 +109,12 @@ const Projecs = () => (
         </Description>
       </ContainerText>
     </ContainerIntro>
+    <SubTitle>My last Projects</SubTitle>
+    <Line />
     <ContainerProjects>
       {
         projects.map((element) => (
-          <Card name={element.name} image={element.languages} description={element.description} key={element.id} />
+          <Card name={element.name} logos={element.languages} description={element.description} key={element.id} />
         ))
       }
     </ContainerProjects>
