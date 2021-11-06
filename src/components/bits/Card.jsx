@@ -44,7 +44,7 @@ const Card = ({ name, logos, description }) => (
     <ContainerLogos>
       {
         logos.map((element) => (
-          <Image src={element} key={element.id} />
+          <Image src={element.image} key={element.id} />
         ))
       }
     </ContainerLogos>
@@ -54,8 +54,10 @@ const Card = ({ name, logos, description }) => (
 
 Card.propTypes = {
   name: PropTypes.string.isRequired,
-  logos: PropTypes.node.isRequired,
   description: PropTypes.string.isRequired,
+  logos: PropTypes.arrayOf(PropTypes.shape({
+    image: PropTypes.string,
+  })).isRequired,
 };
 
 export default Card;
