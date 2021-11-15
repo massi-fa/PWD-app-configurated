@@ -1,71 +1,104 @@
 import js from '../res/js.svg';
 import c from '../res/c.svg';
+import cpiu from '../res/cpiu.svg';
+import unity from '../res/unity.svg';
+import react from '../res/react.svg';
+import node from '../res/node.svg';
+import mongodb from '../res/mongodb.svg';
+import python from '../res/python.svg';
 
 const projects = [
   {
     id: '1',
-    name: 'Serra APP',
-    description: 'Prototipo di un admin panel per serra automatizzata',
+    name: 'Disparity in recommendation systems',
+    description: 'Analysis of gender disparities in referral systems',
     languages: [
       {
-        image: js,
-      },
-      {
-        image: c,
+        id: '1',
+        image: python,
       },
     ],
+    link: 'https://github.com/massi-fa/RecSys2019_DeepLearning_Evaluation/blob/master/README.md',
   },
   {
     id: '2',
-    name: 'Menu APP',
-    description: 'Prototipo di un app menu sfruttanto la tecnologia MERN',
+    name: 'Serra APP',
+    description: 'Prototype of an administration panel for an automated greenhouse',
     languages: [
       {
+        id: '1',
         image: js,
       },
-      {
-        image: c,
-      },
     ],
+    link: 'https://github.com/massi-fa/serrapp',
   },
   {
     id: '3',
-    name: 'Stillosu APP',
-    description: 'Prototipo di un app per gestire il proprio armadio',
+    name: 'Menu APP',
+    description: 'Prototype of a menu app using MERN technology',
     languages: [
       {
+        id: '1',
         image: js,
       },
       {
-        image: c,
+        id: '2',
+        image: node,
+      },
+      {
+        id: '3',
+        image: react,
+      },
+      {
+        id: '4',
+        image: mongodb,
       },
     ],
+    link: 'https://github.com/massi-fa/MenuApp',
   },
   {
     id: '4',
-    name: 'VGD Project',
-    description: 'Gioco Unity 3d con 3 livelli',
+    name: 'Stillosu APP',
+    description: 'Prototype of an app to manage your closet',
     languages: [
       {
+        id: '1',
         image: js,
       },
       {
-        image: c,
+        id: '2',
+        image: react,
       },
     ],
+    link: 'https://github.com/massi-fa/Valium-Project',
   },
   {
     id: '5',
-    name: 'PacMan',
-    description: 'Gioco di pacman realizzato sfruttando la libreria Ncurses e la concorrenza dei thread su linux',
+    name: 'VGD Project',
+    description: 'Unity 3d game with 3 levels',
     languages: [
       {
-        image: js,
+        id: '1',
+        image: unity,
       },
       {
+        id: '2',
+        image: cpiu,
+      },
+    ],
+    link: 'https://github.com/massi-fa/VGD',
+  },
+  {
+    id: '6',
+    name: 'PacMan',
+    description: 'Pacman game made using the Ncurses library and thread concurrency on linux',
+    languages: [
+      {
+        id: '1',
         image: c,
       },
     ],
+    link: 'https://github.com/massi-fa/Pacman--C-Ncurses-Linux-',
   },
 ];
 

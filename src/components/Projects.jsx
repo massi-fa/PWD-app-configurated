@@ -78,6 +78,8 @@ const ContainerProjects = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 1350px;
+  margin: auto;
 `;
 
 const SubTitle = styled.h1`
@@ -114,7 +116,7 @@ const Projecs = () => (
     <ContainerProjects>
       {
         projects.map((element) => (
-          <Card name={element.name} logos={element.languages} description={element.description} key={element.id} />
+          <Card key={element.id} name={element.name} logos={element.languages} description={element.description} link={element.link} />
         ))
       }
     </ContainerProjects>

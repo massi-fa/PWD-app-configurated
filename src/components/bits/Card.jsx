@@ -2,6 +2,10 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import PropTypes from 'prop-types';
 
+const Wrapper = styled.a`
+  text-decoration: none;
+`;
+
 const Container = styled.div`
   width: 15rem;
   min-width: 180px;
@@ -17,7 +21,7 @@ const Container = styled.div`
 `;
 
 const Name = styled.h1`
-  font-size: 2rem;
+  font-size: 1.3rem;
   margin: auto;
   color: #d7dbd8;
 `;
@@ -30,7 +34,7 @@ const ContainerLogos = styled.div`
 
 const Image = styled.img`
   height: 2rem;
-  margin: auto;
+  margin: auto 5px auto 5px;
 `;
 const Description = styled.h2`
   font-size: 0.8rem;
@@ -38,18 +42,22 @@ const Description = styled.h2`
   color: #d7dbd8;
 `;
 
-const Card = ({ name, logos, description }) => (
-  <Container>
-    <Name>{name}</Name>
-    <ContainerLogos>
-      {
-        logos.map((element) => (
-          <Image src={element.image} key={element.id} />
-        ))
-      }
-    </ContainerLogos>
-    <Description>{description}</Description>
-  </Container>
+const Card = ({
+  name, logos, description, link,
+}) => (
+  <Wrapper href={link}>
+    <Container>
+      <Name>{name}</Name>
+      <ContainerLogos>
+        {
+          logos.map((element) => (
+            <Image src={element.image} key={element.id} />
+          ))
+        }
+      </ContainerLogos>
+      <Description>{description}</Description>
+    </Container>
+  </Wrapper>
 );
 
 Card.propTypes = {
@@ -58,6 +66,7 @@ Card.propTypes = {
   logos: PropTypes.arrayOf(PropTypes.shape({
     image: PropTypes.string,
   })).isRequired,
+  link: PropTypes.string.isRequired,
 };
 
 export default Card;

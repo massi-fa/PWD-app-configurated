@@ -11,6 +11,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Education from './components/Education';
 import Projecs from './components/Projects';
+import Footer from './components/Footer';
 
 import homeText from './utils/home';
 import homeImg from './res/homeImg.svg';
@@ -22,12 +23,12 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     overflow: auto;
+    height: 100vh;
   } 
 `;
 
 const Container = styled.div`
   width: 100%;
-  height: 100%;
   background-color: #28292d;
 `;
 
@@ -49,6 +50,7 @@ const App = () => (
           <Redirect to="/Me" />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   </Container>
 );
