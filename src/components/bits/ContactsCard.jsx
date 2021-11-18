@@ -24,6 +24,7 @@ const Type = styled.h1`
 
 const Data = styled.h1`
   font-size: 1rem;
+  margin: auto 10px auto 10px;
 `;
 
 const ContactsCard = () => (
