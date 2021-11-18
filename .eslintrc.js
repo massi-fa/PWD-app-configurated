@@ -19,5 +19,7 @@ module.exports = {
   ],
   rules: {
     'max-len': 'off',
+    'no-alert': 'off',
+    'no-console': 'off',
   },
 };
