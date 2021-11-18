@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import 'animate.css';
 
 import image from '../res/certification.svg';
 
@@ -17,6 +18,8 @@ const Container = styled.div`
     width: 1400px;
     margin: auto;
   };
+  animation: backInLeft;
+  animation-duration: 2s; /* don't forget to set a duration! */
 `;
 
 const ContainerImg = styled.div`

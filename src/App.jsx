@@ -12,6 +12,7 @@ import Home from './components/Home';
 import Education from './components/Education';
 import Projecs from './components/Projects';
 import Footer from './components/Footer';
+import ContactMe from './components/ContactMe';
 
 import homeText from './utils/home';
 import homeImg from './res/homeImg.svg';
@@ -31,6 +32,10 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   background-color: #28292d;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 const App = () => (
@@ -46,6 +51,10 @@ const App = () => (
           <Header />
           <Home title={homeText.title} description={homeText.description} image={homeImg} />
           <Education />
+        </Route>
+        <Route path="/ContactMe">
+          <Header />
+          <ContactMe />
         </Route>
         <Route path="/">
           <Redirect to="/Me" />

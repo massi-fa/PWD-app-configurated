@@ -1,27 +1,47 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import PropTypes from 'prop-types';
-import 'animate.css';
+import ContactCard from './bits/ContactCard';
+import ContactsCard from './bits/ContactsCard';
 
-import git from '../res/github.svg';
-import linkedin from '../res/linkedin.svg';
+import contact from '../res/contact1.svg';
 
 const Container = styled.div`
+
+`;
+
+const ContainerFirst = styled.div`
   display: flex;
-  width: 100%;
+  width: 80%;
   flex-direction: row;
+  justify-content: space-between;
   padding-top: 50px;
   @media only screen and (max-width: 900px) {
     flex-direction: column;
   };
   @media only screen and (min-width: 1400px) {
     width: 1400px;
-    margin: auto;
   };
+  margin: auto;
+  animation: backInLeft;
+  animation-duration: 2s; /* don't forget to set a duration! */
+`;
+const ContainerSecond = styled.div`
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 50px;
+  @media only screen and (max-width: 1000px) {
+    flex-direction: column-reverse;
+  };
+  @media only screen and (min-width: 1400px) {
+    width: 1400px;
+  };
+  margin: auto;
+  padding-bottom: 100px;
   animation: backInRight;
   animation-duration: 2s; /* don't forget to set a duration! */
 `;
-
 const ContainerIntro = styled.div`
   display: flex;
   flex-direction: column;
@@ -56,24 +76,6 @@ const Description = styled.h3`
   color: white;
 `;
 
-const Change = styled.a`
-  color: #9f3645;
-`;
-
-const ContainerIcon = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin: auto;
-`;
-
-const Link = styled.a`
-
-`;
-
-const SocialIcon = styled.img`
-  height: 3rem;
-`;
-
 const ContainerImg = styled.div`
   display: flex;
   margin-bottom: 30px;
@@ -87,39 +89,26 @@ const Image = styled.img`
   max-width: 500px;
   margin: auto;
 `;
-
-const Home = ({
-  title,
-  image,
-}) => (
+const ContactMe = () => (
   <Container>
-    <ContainerIntro>
-      <Title>{title}</Title>
-      <Description>
-        I&apos;m
-        <Change> Massimiliano Fadda</Change>
-        .
-        <br />
-        I&apos;m a programmer and a computer science student. The only goal is to keep learning
-      </Description>
-      <ContainerIcon>
-        <Link href="https://github.com/massi-fa">
-          <SocialIcon src={git} />
-        </Link>
-        <Link href="https://www.linkedin.com/in/massimiliano-fadda-535bb7205/">
-          <SocialIcon src={linkedin} />
-        </Link>
-      </ContainerIcon>
-    </ContainerIntro>
-    <ContainerImg>
-      <Image src={image} />
-    </ContainerImg>
+    <ContainerFirst>
+      <ContainerIntro>
+        <Title>Contact Me</Title>
+        <Description>
+          What are you waiting for?
+          Contact me immediately.
+          You can do it through the form or through the contacts you find at the bottom.
+        </Description>
+      </ContainerIntro>
+      <ContainerImg>
+        <Image src={contact} />
+      </ContainerImg>
+    </ContainerFirst>
+    <ContainerSecond>
+      <ContactsCard />
+      <ContactCard />
+    </ContainerSecond>
   </Container>
 );
 
-Home.propTypes = {
-  title: PropTypes.string.isRequired,
-  image: PropTypes.node.isRequired,
-};
-
-export default Home;
+export default ContactMe;

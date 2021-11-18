@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import PropTypes from 'prop-types';
+import 'animate.css';
 
 const Wrapper = styled.a`
   text-decoration: none;
@@ -18,6 +19,8 @@ const Container = styled.div`
   text-align: center;
   margin: 30px;
   padding: 20px;
+  animation: bounceInDown;
+  animation-duration: 2s; /* don't forget to set a duration! */
 `;
 
 const Name = styled.h1`

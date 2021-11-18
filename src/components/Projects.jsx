@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import 'animate.css';
 
 import projects from '../utils/projects';
 import image from '../res/projects.svg';
@@ -23,6 +24,8 @@ const ContainerIntro = styled.div`
     margin: auto;
   };
   padding-bottom: 50px;
+  animation: backInLeft;
+  animation-duration: 2s; /* don't forget to set a duration! */
 `;
 
 const ContainerImg = styled.div`
@@ -87,6 +90,9 @@ const SubTitle = styled.h1`
   text-align: center;
   color: white;
   font-size: 2.5rem;
+  
+  animation: bounceInDown;
+  animation-duration: 2s; /* don't forget to set a duration! */
 `;
 
 const Line = styled.hr`
@@ -94,6 +100,9 @@ const Line = styled.hr`
     width: 8rem;
     border-radius: 25px;
     background-color: white;
+    
+  animation: bounceInDown;
+  animation-duration: 2s; /* don't forget to set a duration! */
 `;
 
 const Projecs = () => (
