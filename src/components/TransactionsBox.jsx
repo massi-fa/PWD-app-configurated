@@ -19,6 +19,7 @@ const TransactionsBox = () => (
   <Container>
     <Transaction type="income" name="Ninjabet" value="20$" />
     <Transaction type="" name="Spesa Conad" value="30$" />
+    <Transaction type="income" name="Ninjabet" value="20$" />
   </Container>
 );
 
