@@ -14,6 +14,8 @@ const Container = styled.div`
   background-color: #ffff;
   width: 70%;
   margin: 10px auto 10px auto;
+  border: 1px solid;
+  border-color: ${(props) => (props.type === 'income' ? '#52de9a' : '#e76279')};
 `;
 
 const ContainerLogo = styled.div`
@@ -39,7 +41,7 @@ const Text = styled.h1`
 `;
 
 const Transaction = ({ type, name, value }) => (
-  <Container>
+  <Container type={type}>
     <ContainerLogo type={type}>
       {
         type === 'income' ? <Logo src={greenArrow} type={type} /> : <Logo src={redArrow} type={type} />

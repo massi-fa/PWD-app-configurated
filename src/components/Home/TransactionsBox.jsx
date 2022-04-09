@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import Transaction from './bits/Transaction';
+import Transaction from '../bits/Transaction';
 
 const Container = styled.div`
   border-radius: 15px 15px 0px 0px;

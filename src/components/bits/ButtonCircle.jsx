@@ -1,13 +1,28 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import { useLocation, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const Container = styled.div`
+const Container = styled.button`
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
   display: flex;
-  background-color: ${(props) => (props.bg === 'green' ? '#52de9a' : '#e76279')};
+  outline: none;
+  border: none;
+  &:nth-child(1) {
+    background-color: ${(props) => (props.current === '/Home' ? '#52de9a' : 'transparent')};
+  }
+  &:nth-child(2) {
+    background-color: ${(props) => (props.current === '/Plus' ? '#52de9a' : 'transparent')};
+  }
+  &:nth-child(3) {
+    background-color: ${(props) => (props.current === '/Minus' ? '#e76279' : 'transparent')};
+  }
+  &:nth-child(4) {
+    background-color: ${(props) => (props.current === '/Settings' ? '#007169' : 'transparent')};
+  }
+  
 `;
 
 const Logo = styled.img`
@@ -15,15 +30,36 @@ const Logo = styled.img`
   margin: auto;
 `;
 
-const ButtomCircle = ({ logo, bg }) => (
-  <Container bg={bg}>
-    <Logo src={logo} />
-  </Container>
-);
+const ButtomCircle = ({
+  logo,
+  bg,
+  page,
+}) => {
+  const location = useLocation();
+  const path = location.pathname;
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(`/${page}`);
+  };
+  return (
+    <Container
+      id={bg}
+      current={path}
+      onClick={handleClick}
+    >
+      <Logo
+        src={logo}
+        id={bg}
+        current={path}
+      />
+    </Container>
+  );
+};
 
 ButtomCircle.propTypes = {
   logo: PropTypes.node.isRequired,
-  bg: PropTypes.string.isRequired,
+  bg: PropTypes.node.isRequired,
+  page: PropTypes.string.isRequired,
 };
 
 export default ButtomCircle;

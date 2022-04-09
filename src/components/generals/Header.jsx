@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import PropTypes from 'prop-types';
 
-import logo from '../res/icona.png';
+import logo from '../../res/icona.png';
 
 const Container = styled.header`
   display: flex;
@@ -21,11 +22,15 @@ const Logo = styled.img`
   width: 6rem;
 `;
 
-const Header = () => (
+const Header = ({ name }) => (
   <Container>
-    <Title>Home</Title>
+    <Title>{name}</Title>
     <Logo src={logo} />
   </Container>
 );
+
+Header.propTypes = {
+  name: PropTypes.string.isRequired,
+};
 
 export default Header;
