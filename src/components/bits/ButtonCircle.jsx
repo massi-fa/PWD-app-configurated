@@ -39,7 +39,7 @@ const ButtomCircle = ({
   const path = location.pathname;
   const navigate = useNavigate();
   const handleClick = () => {
-    window.navigator.vibrate(10); // vibrate for 200ms
+    window.navigator.vibrate(5); // vibrate for 5ms
     navigate(`/${page}`);
   };
   return (
