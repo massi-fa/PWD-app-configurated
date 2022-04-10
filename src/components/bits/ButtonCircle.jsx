@@ -39,6 +39,8 @@ const ButtomCircle = ({
   const path = location.pathname;
   const navigate = useNavigate();
   const handleClick = () => {
+    window.navigator.vibrate(200); // vibrate for 200ms
+    window.navigator.vibrate([100, 30, 100, 30, 100, 30, 200, 30, 200]); // Vibrate 'SOS' in Morse.
     navigate(`/${page}`);
   };
   return (
