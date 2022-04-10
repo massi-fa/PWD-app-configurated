@@ -10,6 +10,8 @@ import {
 import Header from './components/generals/Header';
 import Bottom from './components/generals/Bottom';
 import Home from './components/Home/Home';
+import FormMoney from './components/Plus&Minus/FormMoney';
+import Tags from './components/Plus&Minus/Tags';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -45,6 +47,8 @@ const App = () => (
           element={
             <>
               <Header name="Income" />
+              <FormMoney type="income" text="Adding income of" />
+              <Tags type="income" />
             </>
           }
         />
@@ -53,6 +57,8 @@ const App = () => (
           element={
             <>
               <Header name="Expense" />
+              <FormMoney type="expense" text="Adding expense of" />
+              <Tags type="expense" />
             </>
           }
         />
