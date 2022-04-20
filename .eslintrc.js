@@ -20,5 +20,6 @@ module.exports = {
   rules: {
     "react/jsx-wrap-multilines": 0,
     "no-console": 0,
+    "max-len": 0,
   },
 };

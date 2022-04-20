@@ -59,7 +59,7 @@ const Transaction = ({ type, name, value }) => (
 Transaction.propTypes = {
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
 };
 
 export default Transaction;
