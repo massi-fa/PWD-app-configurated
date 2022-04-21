@@ -19,10 +19,10 @@ const Container = styled.div`
 const TransactionsBox = ({ data }) => (
   <Container>
     {(() => {
-      if (data != null) {
+      if (data !== []) {
         return (
           data.map((element) => (
-            <Transaction type={element.type} name={element.name} value={element.value} key={element.key} />
+            <Transaction type={element.type} name={element.name} value={element.value} key={element.time} />
           ))
         );
       }
@@ -32,11 +32,7 @@ const TransactionsBox = ({ data }) => (
 );
 
 TransactionsBox.propTypes = {
-  data: PropTypes.node.isRequired,
+  data: PropTypes.array.isRequired,
 };
 
 export default TransactionsBox;
-
-/* <Transaction type="income" name="Ninjabet" value="20$" />
-   <Transaction type="" name="Spesa Conad" value="30$" />
-   <Transaction type="income" name="Ninjabet" value="20$" /> */

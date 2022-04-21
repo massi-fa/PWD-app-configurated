@@ -12,7 +12,7 @@ const Container = styled.div`
 `;
 
 const Home = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const res = [];
   useEffect(() => {
     db.collection('All').get()

@@ -21,5 +21,6 @@ module.exports = {
     "react/jsx-wrap-multilines": 0,
     "no-console": 0,
     "max-len": 0,
+    "react/forbid-prop-types": 0,
   },
 };
