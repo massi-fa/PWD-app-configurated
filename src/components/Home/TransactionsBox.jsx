@@ -22,7 +22,7 @@ const TransactionsBox = ({ data }) => (
       if (data !== []) {
         return (
           data.map((element) => (
-            <Transaction type={element.type} name={element.name} value={element.value} key={element.time} />
+            <Transaction type={element.type} name={element.name} value={element.value} key={element.id} />
           ))
         );
       }
