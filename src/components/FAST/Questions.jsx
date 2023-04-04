@@ -78,8 +78,8 @@ const ButtonClose = styled.button`
 `;
 
 const Img = styled.img`
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
 `;
 
 const Button = styled.button`
@@ -137,7 +137,7 @@ const Questions = ({ click }) => {
               console.log(newValue);
             }}
             sx={{
-              margin: '20px auto 10px auto',
+              margin: '20px auto 0px auto',
             }}
           />
         </Box>
