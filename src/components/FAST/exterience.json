@@ -1,22 +1,27 @@
 [
       {
         "key": "5",
-        "value": "Molto soddisfatto"
+        "value": "Molto soddisfatto",
+        "numValue": "5"
       },
       {
         "key": "4",
-        "value": "Abbastanza soddisfatto"
+        "value": "Abbastanza soddisfatto",
+        "numValue": "4"
       },
       {
         "key": "3",
-        "value": "Neutro"
+        "value": "Neutro",
+        "numValue": "3"
       },
       {
         "key": "2",
-        "value": "Poco soddisfatto"
+        "value": "Poco soddisfatto",
+        "numValue": "2"
       },
       {
         "key": "1",
-        "value": "Molto poco soddisfatto"
+        "value": "Molto poco soddisfatto",
+        "numValue": "1"
       }
 ]

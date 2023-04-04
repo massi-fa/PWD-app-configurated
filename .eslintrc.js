@@ -19,5 +19,6 @@ module.exports = {
   ],
   rules: {
     'max-len': 'off',
+    'react/jsx-props-no-spreading': 'off',
   },
 };
