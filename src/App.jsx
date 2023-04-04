@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components/macro';
 import Header from './components/Header';
+import Fast from './components/FAST/Fast';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -23,6 +24,7 @@ const App = () => (
   <Container>
     <GlobalStyle />
     <Header />
+    <Fast />
   </Container>
 );
 
