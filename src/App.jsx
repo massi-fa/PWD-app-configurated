@@ -1,7 +1,14 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components/macro';
-import Header from './components/Header';
+
 import Fast from './components/FAST/Fast';
+import AdminPage from './components/AdminPage';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -23,8 +30,23 @@ const Container = styled.div`
 const App = () => (
   <Container>
     <GlobalStyle />
-    <Header />
-    <Fast />
+    <Router>
+      <Routes>
+        <Route
+          path="/fast"
+          element={
+            <Fast />
+          }
+        />
+        <Route
+          path="/admin"
+          element={
+            <AdminPage />
+          }
+        />
+        <Route path="/" element={<Navigate to="/admin" />} />
+      </Routes>
+    </Router>
   </Container>
 );
 

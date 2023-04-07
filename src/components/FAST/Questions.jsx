@@ -114,7 +114,13 @@ const Questions = ({ click }) => {
     console.log(inputValue);
     console.log('Fine TEST');
     // metti i dati
-    const data = { rating: valueR, selection: value, text: inputValue };
+    const timestamp = new Date().toISOString();
+    const data = {
+      rating: valueR,
+      selection: value,
+      text: inputValue,
+      time: timestamp,
+    };
     axios.post('/.netlify/functions/add_data', data)
       .then((response) => {
         console.log(response);
