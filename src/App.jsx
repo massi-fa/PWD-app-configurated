@@ -9,6 +9,7 @@ import styled, { createGlobalStyle } from 'styled-components/macro';
 
 import Fast from './components/FAST/Fast';
 import AdminPage from './components/AdminPage';
+import NavButton from './components/NavButton';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -34,15 +35,21 @@ const App = () => (
       <Routes>
         <Route
           path="/fast"
-          element={
-            <Fast />
-          }
+          element={(
+            <>
+              <NavButton path="/admin" text="Admin Page" />
+              <Fast />
+            </>
+          )}
         />
         <Route
           path="/admin"
-          element={
-            <AdminPage />
-          }
+          element={(
+            <>
+              <NavButton path="/fast" text="Fasty Page" />
+              <AdminPage />
+            </>
+        )}
         />
         <Route path="/" element={<Navigate to="/fast" />} />
       </Routes>
