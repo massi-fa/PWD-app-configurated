@@ -28,6 +28,7 @@ const Container = styled.div`
   transform: translate(-50%, -50%);
   margin: auto;
   border: 3px solid #A100FF;
+  background-color: #fff;
   border-radius: 10px;
   padding: 5px;
   display: flex;
