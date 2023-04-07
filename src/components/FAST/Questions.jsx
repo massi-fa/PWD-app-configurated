@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+// import axios from 'axios';
 
 // import 'animate.css';
 
@@ -111,6 +112,7 @@ const Questions = ({ click }) => {
     console.log(value);
     console.log(inputValue);
     console.log('Fine TEST');
+    
     setInputValue('');
     setValue(5);
     setValueR(5);
