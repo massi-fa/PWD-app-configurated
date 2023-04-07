@@ -44,7 +44,7 @@ const App = () => (
             <AdminPage />
           }
         />
-        <Route path="/" element={<Navigate to="/admin" />} />
+        <Route path="/" element={<Navigate to="/fast" />} />
       </Routes>
     </Router>
   </Container>
