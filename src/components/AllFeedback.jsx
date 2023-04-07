@@ -10,6 +10,7 @@ const Container = styled.div`
   padding: 10px;
   width: 60%;
   margin: 50px auto;
+  background-color: #A100FF;
 `;
 
 const ContainerFeedback = styled.div`
@@ -19,6 +20,7 @@ const ContainerFeedback = styled.div`
   display: flex;
   flex-direction: row;
   margin: 10px;
+  background-color: white;
 `;
 
 const ContainerField = styled.div`
@@ -44,7 +46,7 @@ const H1 = styled.h1`
   text-align: center;
 `;
 const H2 = styled.h1`
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin: 5px;
   text-align: center;
 `;
@@ -53,7 +55,7 @@ const AllFeedback = ({ feedbacks }) => (
   <Container>
     {
       feedbacks.map((feedback) => (
-        <ContainerFeedback>
+        <ContainerFeedback key={feedback.rating * Math.random()}>
           <ContainerField>
             <H1>Rating</H1>
             <H2>{feedback.rating}</H2>

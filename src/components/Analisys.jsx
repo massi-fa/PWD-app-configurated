@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 const Container = styled.div`
   display: flex;
@@ -10,6 +10,7 @@ const Container = styled.div`
   padding: 10px;
   width: 60%;
   margin: 50px auto;
+  background-color: #A100FF;
 `;
 
 const ContainerField = styled.div`
@@ -18,30 +19,35 @@ const ContainerField = styled.div`
   width: 40%;
   border: 1px solid #A100FF;
   border-radius: 10px;
+  background-color: white;
+  text-align: center;
 `;
 
-const Analisys = ({ feedbacks }) => {
-  console.log(feedbacks);
-  const mediaRating = feedbacks.reduce((acc, feedback) => acc + feedback.rating, 0) / feedbacks.length;
-  console.log(mediaRating);
-  const mediaSelection = feedbacks.reduce((acc, feedback) => acc + feedback.selection, 0) / feedbacks.length;
-  console.log(mediaSelection);
+const Analisys = () => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    axios.get('/.netlify/functions/get_analisys')
+      .then((response) => {
+        console.log(response);
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+  console.log(data);
   return (
     <Container>
       <ContainerField>
         <h1>Media Rating</h1>
-        <h1>{mediaRating}</h1>
+        <h1>{Number(data.mediaR).toFixed(1)}</h1>
       </ContainerField>
       <ContainerField>
         <h1>Media Selection</h1>
-        <h1>{mediaSelection}</h1>
+        <h1>{Number(data.mediaS).toFixed(1)}</h1>
       </ContainerField>
     </Container>
   );
-};
-
-Analisys.propTypes = {
-  feedbacks: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default Analisys;

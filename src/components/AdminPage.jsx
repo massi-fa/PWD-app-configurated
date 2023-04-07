@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import AllFeedback from './AllFeedback';
+import Analisys from './Analisys';
 
 const Container = styled.div`
 
@@ -23,6 +24,7 @@ const AdminPage = () => {
 
   return (
     <Container>
+      <Analisys />
       <AllFeedback feedbacks={data} />
     </Container>
   );

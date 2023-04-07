@@ -117,7 +117,7 @@ const Questions = ({ click }) => {
     const timestamp = new Date().toISOString();
     const data = {
       rating: valueR,
-      selection: value,
+      selection: Number(value),
       text: inputValue,
       time: timestamp,
     };
