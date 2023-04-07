@@ -8,7 +8,6 @@ const Container = styled.div`
   border-radius: 10px;
   border: 1px solid #A100FF;
   padding: 10px;
-  width: 60%;
   margin: 50px auto;
   background-color: #A100FF;
 `;
@@ -18,23 +17,26 @@ const ContainerFeedback = styled.div`
   border-radius: 10px;
   padding: 10px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin: 10px;
   background-color: white;
 `;
+const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
 
 const ContainerField = styled.div`
-  margin: 20px;
+  margin: auto 5px auto 5px;
   padding: 5px;
-  width: 20%;
   border: 1px solid #A100FF;
   border-radius: 10px;
 `;
 
 const ContainerSuggestions = styled.div`
-  margin: 20px;
+  margin: 10px auto;
   padding: 5px;
-  width: 50%;
   border: 1px solid #A100FF;
   border-radius: 10px;
 `;
@@ -56,14 +58,16 @@ const AllFeedback = ({ feedbacks }) => (
     {
       feedbacks.map((feedback) => (
         <ContainerFeedback key={feedback.rating * Math.random()}>
-          <ContainerField>
-            <H1>Rating</H1>
-            <H2>{feedback.rating}</H2>
-          </ContainerField>
-          <ContainerField>
-            <H1>Selection</H1>
-            <H2>{feedback.selection}</H2>
-          </ContainerField>
+          <Row>
+            <ContainerField>
+              <H1>Rating</H1>
+              <H2>{feedback.rating}</H2>
+            </ContainerField>
+            <ContainerField>
+              <H1>Selection</H1>
+              <H2>{feedback.selection}</H2>
+            </ContainerField>
+          </Row>
           <ContainerSuggestions>
             <H1>Suggestion</H1>
             <H2>{feedback.text}</H2>

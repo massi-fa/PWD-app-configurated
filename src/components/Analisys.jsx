@@ -8,11 +8,15 @@ const Container = styled.div`
   border-radius: 10px;
   border: 1px solid #A100FF;
   padding: 10px;
-  width: 60%;
   margin: 50px auto;
   background-color: #A100FF;
 `;
-
+const H1 = styled.h1`
+  font-size: 1.5rem;
+  border-bottom: 1px solid #A100FF;
+  margin: 5px;
+  text-align: center;
+`;
 const ContainerField = styled.div`
   margin: 20px;
   padding: 5px;
@@ -39,12 +43,12 @@ const Analisys = () => {
   return (
     <Container>
       <ContainerField>
-        <h1>Media Rating</h1>
-        <h1>{Number(data.mediaR).toFixed(1)}</h1>
+        <H1>Media Rating</H1>
+        <H1>{Number(data.mediaR).toFixed(1)}</H1>
       </ContainerField>
       <ContainerField>
-        <h1>Media Selection</h1>
-        <h1>{Number(data.mediaS).toFixed(1)}</h1>
+        <H1>Media Selection</H1>
+        <H1>{Number(data.mediaS).toFixed(1)}</H1>
       </ContainerField>
     </Container>
   );
