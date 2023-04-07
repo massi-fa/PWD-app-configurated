@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-// import axios from 'axios';
+import axios from 'axios';
 
 // import 'animate.css';
 
@@ -112,7 +112,15 @@ const Questions = ({ click }) => {
     console.log(value);
     console.log(inputValue);
     console.log('Fine TEST');
-    
+    // metti i dati
+    const data = { rating: valueR, selection: value, text: inputValue };
+    axios.post('/.netlify/functions/add_data', data)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     setInputValue('');
     setValue(5);
     setValueR(5);
