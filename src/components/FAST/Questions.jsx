@@ -12,6 +12,11 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
+
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
+
 import valutations from './exterience.json';
 
 import iconClose from '../../res/iconClose.png';
@@ -57,7 +62,7 @@ const ContainerSugg = styled.div`
 const Input = styled.input`
   padding: 10px;
   border: 1px solid #A100FF;
-  width: 80%;
+  width: 90%;
   height: 3rem;
   border-radius: 4px;
   font-size: 16px;
@@ -96,10 +101,21 @@ const SendImg = styled.img`
   margin: auto;
 `;
 
+const problems = [
+  'Bug',
+  'Crash',
+  'Performance',
+  'Other',
+];
+
 const Questions = ({ click }) => {
   const [valueR, setValueR] = useState(5);
   const [value, setValue] = useState(5);
   const [inputValue, setInputValue] = useState('');
+  const [topic, setTopic] = useState('');
+  const handleChangeProb = (event) => {
+    setTopic(event.target.value);
+  };
   const handleChangeInput = (event) => {
     setInputValue(event.target.value);
   };
@@ -118,6 +134,7 @@ const Questions = ({ click }) => {
     const data = {
       rating: valueR,
       selection: Number(value),
+      problem: topic,
       text: inputValue,
       time: timestamp,
     };
@@ -176,6 +193,26 @@ const Questions = ({ click }) => {
       </ContainerRadio>
       <ContainerSugg>
         <H1>Do you have any suggestions?</H1>
+        <FormControl sx={{ m: 1, minWidth: 60 }}>
+          <InputLabel id="demo-simple-select-autowidth-label">Problem</InputLabel>
+          <Select
+            labelId="demo-simple-select-autowidth-label"
+            id="demo-simple-select-autowidth"
+            value={topic}
+            onChange={handleChangeProb}
+            autoWidth
+            label="Problem"
+          >
+            <MenuItem value="">
+              <em>None</em>
+            </MenuItem>
+            {
+              problems.map((problem) => (
+                <MenuItem value={problem} key={problem}>{problem}</MenuItem>
+              ))
+            }
+          </Select>
+        </FormControl>
         <Input
           type="text"
           value={inputValue}
