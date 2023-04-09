@@ -8,12 +8,18 @@ const clientPromise = mongoClient.connect();
 
 const handler = async (event) => {
   try {
-    const { rating, selection, text } = JSON.parse(event.body); // Parse input data from the request body
+    const {
+      rating,
+      selection,
+      problem,
+      text,
+    } = JSON.parse(event.body); // Parse input data from the request body
     const database = (await clientPromise).db(process.env.MONGODB_DATABASE);
     const collection = database.collection(process.env.MONGODB_COLLECTION);
     const result = await collection.insertOne({
       rating,
       selection,
+      problem,
       text,
     });
     return {
