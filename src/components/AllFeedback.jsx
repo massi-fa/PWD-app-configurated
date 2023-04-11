@@ -53,15 +53,16 @@ const ContainerSuggestions = styled.div`
 `;
 
 const H1 = styled.h1`
-  font-size: 1.5rem;
+  font-size: 1rem;
   border-bottom: 1px solid #A100FF;
   margin: 5px;
   text-align: center;
 `;
-const H2 = styled.h1`
-  font-size: 1.2rem;
+const H2 = styled.h2`
+  font-size: 0.8rem;
   margin: 5px;
   text-align: center;
+  padding-top: 3px;
 `;
 
 const problems = [

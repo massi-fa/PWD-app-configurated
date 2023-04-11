@@ -7,22 +7,28 @@ const Container = styled.div`
   flex-direction: row;
   border-radius: 10px;
   border: 1px solid #A100FF;
-  padding: 10px;
+  padding: 3px;
   margin: 50px auto;
   background-color: #A100FF;
 `;
 const H1 = styled.h1`
-  font-size: 1.5rem;
-  border-bottom: 1px solid #A100FF;
+  font-size: 1rem;
   margin: 5px;
   text-align: center;
+`;
+const H2 = styled.h2`
+  font-size: 0.8rem;
+  margin: 5px;
+  border-top: 1px solid #A100FF;
+  text-align: center;
+  padding-top: 3px;
 `;
 const ContainerField = styled.div`
   margin: 20px;
   padding: 5px;
-  width: 40%;
   border: 1px solid #A100FF;
   border-radius: 10px;
+  width: 7rem;
   background-color: white;
   text-align: center;
 `;
@@ -43,12 +49,14 @@ const Analisys = () => {
   return (
     <Container>
       <ContainerField>
-        <H1>Media Rating</H1>
-        <H1>{Number(data.mediaR).toFixed(1)}</H1>
+        <H1>Media</H1>
+        <H1>Rating</H1>
+        <H2>{Number(data.mediaR).toFixed(1)}</H2>
       </ContainerField>
       <ContainerField>
-        <H1>Media Selection</H1>
-        <H1>{Number(data.mediaS).toFixed(1)}</H1>
+        <H1>Media</H1>
+        <H1>Selection</H1>
+        <H2>{Number(data.mediaS).toFixed(1)}</H2>
       </ContainerField>
     </Container>
   );
