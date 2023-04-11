@@ -85,6 +85,9 @@ const AllFeedback = ({ feedbacks }) => {
       setFiltered(feedbacks);
     }
   }, [topic]);
+  useEffect(() => {
+    setFiltered(feedbacks);
+  }, []);
   return (
     <Container>
       <ContainerDrop>
